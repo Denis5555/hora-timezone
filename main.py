@@ -18,7 +18,7 @@ import pytz
 # =====================================================
 
 
-Builder.load_file('clocklanguage.kv')
+Builder.load_file('worldclock.kv')
 Window.size = (300, 600)
 # Set the app size
 def build(self):
@@ -29,7 +29,7 @@ def build(self):
     return kv
 
 
-class Clocklanguage(App):
+class worldclock(App):
     def on_start(self):
         Clock.schedule_interval(self.update, 0)
 
@@ -64,7 +64,7 @@ class Clocklanguage(App):
 
 
 if __name__ == "__main__":
-    Clocklanguage().run()
+    worldclock().run()
 
 
 
