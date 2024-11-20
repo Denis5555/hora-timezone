@@ -18,8 +18,8 @@ import pytz
 # =====================================================
 
 
-Builder.load_file('practiceclock.kv')
-
+Builder.load_file('clocklanguage.kv')
+Window.size = (300, 600)
 # Set the app size
 def build(self):
     if (platform == 'android' or platform == 'ios'):  # Usei o or em vez de | para não mostrar erro no PyCharm
@@ -29,7 +29,7 @@ def build(self):
     return kv
 
 
-class PracticeClock(App):
+class Clocklanguage(App):
     def on_start(self):
         Clock.schedule_interval(self.update, 0)
 
@@ -42,29 +42,29 @@ class PracticeClock(App):
         horapl = str(horapl)
         datahorapl = horapl[:-22]
         horapl = horapl[10:-13]
-        self.root.ids.timepl.text = '\n' + horapl + ' ' + f'[size=50]{datahorapl}[/size]'
+        self.root.ids.timepl.text = '\n' + f'[size=30]{horapl}[/size]' + ' ' + f'[size=15]\n{datahorapl}[/size]'
 
         horabr = hora.astimezone(timezone('Brazil/East'))
         horabr = str(horabr)
         datahorabr = horabr[:-22]
         horabr = horabr[10:-13]
-        self.root.ids.timebr.text = '\n' + horabr + ' ' + f'[size=50]{datahorabr}[/size]'
+        self.root.ids.timebr.text = '\n' + f'[size=30]{horabr}[/size]' + ' ' + f'[size=15]\n{datahorabr}[/size]'
 
         horaauq = hora.astimezone(timezone('Australia/Brisbane'))
         horaauq = str(horaauq)
         datahoraauq = horaauq[:-22]
         horaauq = horaauq[10:-13]
-        self.root.ids.timeauq.text = '[size=50]Qld[/size]\n' + horaauq + ' ' + f'[size=50]{datahoraauq}[/size]'
+        self.root.ids.timeauq.text = '[size=15]Qld[/size]\n' + f'[size=30]{horaauq}[/size]' + ' ' + f'[size=15]\n{datahoraauq}[/size]'
 
         horaausyd = hora.astimezone(timezone('Australia/Sydney'))
         horaausyd = str(horaausyd)
         datahoraausyd = horaausyd[:-22]
         horaausyd = horaausyd[10:-13]
-        self.root.ids.timeausyd.text = '[size=50]Syd/Mel[/size]\n' + horaausyd + ' ' + f'[size=50]{datahoraausyd}[/size]'
+        self.root.ids.timeausyd.text = '[size=15]Syd/Mel[/size]\n' + f'[size=30] {horaausyd} [/size]' + ' ' + f'[size=15]\n{datahoraausyd}[/size]'
 
 
 if __name__ == "__main__":
-    PracticeClock().run()
+    Clocklanguage().run()
 
 
 

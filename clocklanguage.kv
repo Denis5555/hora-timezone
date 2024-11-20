@@ -1,0 +1,67 @@
+#:kivy 1.0.9
+#:import utils kivy.utils
+
+<Label>
+    markup: True
+
+BoxLayout:
+    orientation: "vertical"
+    size: root.width, root.height
+    pos_hint: {"right": 1, "y": -0.06}  # Positioned at the bottom-right corner
+
+    Label:
+        canvas.before:
+            Rectangle:
+                pos: self.center_x - 50, self.center_y - 10 # default size is 100x100, usei no size 256, 256 para o apk
+                source: 'imgbr.png'
+                size: 100, 100
+
+        id: timebr
+        text: "00:00"
+        color: "grey"
+        font_size: 15 # para o apk eu usei 100 # para ver no computador 15
+        halign: 'center'
+        pos_hint:{'left_x': 0.1, 'center_y': 0.1}
+
+    Label:
+        canvas.before:
+            Rectangle:
+                pos: self.center_x - 50, self.center_y - 10 # default size is 100x100, usei 256, 256 para o apk
+                source: 'imgpl.png'
+                size: 100, 100
+
+
+        id: timepl
+        text: "00:00"
+        color: "grey"
+        font_size: 15 # para o apk eu usei 100 # para ver no computador 15
+        halign: 'center'
+        pos_hint:{'left_x': 0.1, 'center_y': 0.1}
+
+    Label:
+        canvas.before:
+            Rectangle:
+                pos: self.center_x - 50, self.center_y - 10 # default size is 100x100, usei 256, 256 para o apk
+                source: 'imgau.png'
+                size: 100, 100
+
+        id: timeauq
+        text: "00:00"
+        color: "grey"
+        font_size: 15 # para o apk eu usei 100 # para ver no computador 15
+        halign: 'center'
+        pos_hint:{'left_x': 0.1, 'center_y': 0.1}
+
+    Label:
+        canvas.before:
+            Rectangle:
+                pos: self.center_x - 50, self.center_y - 10 # default size is 100x100, usei 256, 256 para o apk
+                source: 'imgau.png'
+                size: 100, 100
+
+        id: timeausyd
+        text: "00:00"
+        color: "grey"
+        font_size: 15 # para o apk eu usei 100 # para ver no computador 15
+        halign: 'center'
+        pos_hint:{'left_x': 0.1, 'center_y': 0.5}
